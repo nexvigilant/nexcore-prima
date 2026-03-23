@@ -1,0 +1,31 @@
+
+[package]
+name = "nexcore-prima"
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Thin re-export wrapper for prima — the canonical Prima language implementation"
+license = "LicenseRef-Proprietary"
+authors = ["Matthew Alexander Campion, PharmD <matt@nexvigilant.com>"]
+keywords = ["language", "primitives", "interpreter", "type-theory", "grounding"]
+categories = ["compilers", "development-tools"]
+
+# Copyright © 2026 NexVigilant LLC. All Rights Reserved.
+# Intellectual Property of Matthew Alexander Campion, PharmD
+#
+# NOTE: This crate is a thin wrapper. The canonical implementation lives in `prima`.
+# New consumers should depend on `prima` directly.
+
+autobins = false
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+prima = { version = "0.1.0", path = "../prima" }
+nexcore-lex-primitiva = { workspace = true }
+nexcore-error = { workspace = true }
+
+
+[lints]
+workspace = true
