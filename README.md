@@ -1,48 +1,40 @@
 # nexcore-prima
 
-The primitive-first programming language for the NexVigilant platform. Every construct in the Prima language (πρίμα) is formally grounded in the 15 Lex Primitiva symbols, enabling verifiable and cross-domain transferable logic.
+Part of the [NexVigilant](https://nexvigilant.com) pharmacovigilance platform.
 
-## Intent
-To provide a computation environment where complexity is strictly tracked and safety is guaranteed through grounding. Prima code (`.σ`) is used to define behavioral rules, safety axioms, and domain-specific logic that must be transparent to both humans and AI agents.
+## About NexVigilant
 
-## T1 Grounding (Lex Primitiva)
-Dominant Primitives:
-- **μ (Mapping)**: The core primitive for parsing source code to AST and evaluating expressions.
-- **σ (Sequence)**: Manages the execution flow of programs and the ordering of tokens.
-- **Σ (Sum)**: Root primitive for arithmetic and logical accumulation.
-- **κ (Comparison)**: Used for type checking and threshold evaluation within the language.
+NexVigilant makes pharmacovigilance accessible. We build open computation tools for drug safety signal detection, causality assessment, and regulatory intelligence — because patient safety knowledge should be available to everyone willing to learn.
 
-## The 15 Lex Primitiva Symbols
-`σ μ ς ρ ∅ ∂ ν ∃ π → κ N λ ∝ Σ`
+**Live tools:** [mcp.nexvigilant.com](https://mcp.nexvigilant.com) — 193 MCP tools for AI-powered pharmacovigilance, free to connect.
 
-## File Extensions
-- **.σ** (Sigma): Preferred Unicode extension.
-- **.prima**: Standard ASCII fallback.
+## Installation
 
-## SOPs for Use
-### Evaluating Source Code
-```rust
-use nexcore_prima::eval;
-
-let result = eval("1 + 2")?;
-assert_eq!(result, Value::int(3));
+```toml
+[dependencies]
+nexcore-prima = { git = "https://github.com/nexvigilant/nexcore-prima" }
 ```
 
-### Defining a Function
-```prima
-fn f(x: N) → N {
-    x * 2
-}
-f(21) // Returns 42
-```
-
-## Language Tiers
-| Tier | Primitives | Transfer Confidence |
-| :--- | :---: | :--- |
-| **T1** | 1 | 1.0 |
-| **T2-P** | 2-3 | 0.9 |
-| **T2-C** | 4-5 | 0.7 |
-| **T3** | 6+ | 0.4 |
+> **Note:** This crate was developed as part of the [nexcore](https://github.com/nexvigilant) workspace. Some dependencies may reference workspace-level configuration. See individual `Cargo.toml` for details.
 
 ## License
-Proprietary. Copyright (c) 2026 NexVigilant LLC. All Rights Reserved.
+
+**Personal, non-commercial use only.** See [LICENSE](LICENSE) for full terms.
+
+Organizations of any kind must have explicit written permission for use.
+Contact [matthew@nexvigilant.com](mailto:matthew@nexvigilant.com) for licensing.
+
+## Contributing
+
+Contributions are welcome under the following terms:
+
+1. **Fork & PR.** Fork this repository, make your changes, and submit a pull request.
+2. **CLA.** By submitting a pull request, you agree that your contributions become the property of NexVigilant LLC under the same license terms.
+3. **Code quality.** All Rust code must pass `cargo clippy -- -D warnings` and `cargo fmt --check`.
+4. **Tests.** New functionality should include tests. Run `cargo test --lib` before submitting.
+
+For questions or discussion, open an issue or reach out at [matthew@nexvigilant.com](mailto:matthew@nexvigilant.com).
+
+---
+
+Built by [NexVigilant LLC](https://nexvigilant.com) — Pharmacovigilance for NexVigilants.
